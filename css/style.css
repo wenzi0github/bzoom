@@ -48,9 +48,6 @@ body{background: #eee;}
     width: 50px;
     height: 70px
 }
-.etalage_magnifier div{
-	overflow: hidden;
-}
 .etalage .etalage_zoom_area, .etalage_zoom_area {
   background: #fff url(./img/loading.gif) center no-repeat;
   border: 1px solid #ddd;
@@ -71,6 +68,10 @@ body{background: #eee;}
     background: #fff;
     outline:#bbb solid 1px;
     display: none;
+    cursor: move;
+}
+.etalage_magnifier div{
+  overflow: hidden;
 }
 .etalage_wrap .etalage_small_thumbs{
     overflow: hidden;
