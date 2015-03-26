@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery放大镜</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+	<div class="etalage_wrap">
+        <ul id="etalage">
+            <li>
+                <img class="etalage_thumb_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_375_500_1.jpg" title="first img" />
+                <img class="etalage_big_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_750_1000_1.jpg"/>
+            </li>
+            <li>
+                <img class="etalage_thumb_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_375_500_2.jpg"/>
+                <img class="etalage_big_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_750_1000_2.jpg"/>
+            </li>
+            <li>
+                <img class="etalage_thumb_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_375_500_3.jpg"/>
+                <img class="etalage_big_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_750_1000_3.jpg"/>
+            </li>
+            <li>
+                <img class="etalage_thumb_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_375_500_4.jpg"/>
+                <img class="etalage_big_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_750_1000_4.jpg"/>
+            </li>
+            <li>
+                <img class="etalage_thumb_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_375_500_5.jpg"/>
+                <img class="etalage_big_image" src="http://p3.jmstatic.com/product/000/506/506658_std/506658_pop_750_1000_5.jpg"/>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./js/jqzoom.js"></script>
+<script type="text/javascript">
+$("#etalage").zoom({
+	zoom_area_width: 300,
+    autoplay_interval :3000,
+    small_thumbs : 4,
+    autoplay : false
+});
+</script>
+</html>

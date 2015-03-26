@@ -1,0 +1,89 @@
+body{background: #eee;}
+.clearfix{zoom: 1;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.etalage{direction: ltr;}
+.etalage,.etalage_thumb,.etalage_thumb_image,.etalage_big_image,.etalage_zoom_preview,.etalage_icon,.etalage_hint {
+    display: none
+}
+
+.etalage .etalage_thumb {
+  background: #fff url(./img/loading.gif) center no-repeat;
+}
+
+.etalage,.etalage ul,.etalage li,.etalage img,.etalage_hint,.etalage_icon,.etalage_description {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none
+}
+
+.etalage,.etalage_magnifier div,.etalage_magnifier div img,.etalage_small_thumbs ul,ul .etalage_small_thumbs li,.etalage_zoom_area div,.etalage_zoom_img {
+    position: relative
+}
+.etalage img,.etalage li {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    user-drag: none
+}
+
+.etalage,.etalage_small_thumbs li {
+    float: left
+}
+
+.etalage_right {
+    float: right
+}
+
+.etalage li {
+    position: absolute
+}
+
+.etalage img {
+    vertical-align: bottom;
+    width: 50px;
+    height: 70px
+}
+.etalage_magnifier div{
+	overflow: hidden;
+}
+.etalage .etalage_zoom_area, .etalage_zoom_area {
+  background: #fff url(./img/loading.gif) center no-repeat;
+  border: 1px solid #ddd;
+  padding: 6px;
+  -webkit-box-shadow: 0 0 10px #ddd;
+  -moz-box-shadow: 0 0 10px #ddd;
+  box-shadow: 0 0 10px #ddd;
+  display: none;
+  z-index: 20;
+}
+.etalage_zoom_area div{
+	overflow: hidden;
+}
+.etalage_zoom_area .etalage_zoom_img{
+	position: absolute;
+}
+.etalage_wrap .etalage_magnifier{
+    background: #fff;
+    outline:#bbb solid 1px;
+    display: none;
+}
+.etalage_wrap .etalage_small_thumbs{
+    overflow: hidden;
+}
+.etalage_wrap .etalage_small_thumbs li {
+    border: 1px solid #FFF;
+    margin: 0px 10px 0px 0px;
+    position: relative;
+}
+
+.etalage_wrap ul li.etalage_smallthumb_active {
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+    border: 1px solid #535353;
+}
