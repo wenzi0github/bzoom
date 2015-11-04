@@ -132,7 +132,7 @@
 				$small = $('<li class="etalage_small_thumbs" style="top:'+top+'px; width:'+width+'px;"><ul class="clearfix" style="width: 485px;">'+html+'</ul></li>');
 				$ul.append($small);
 
-				$small.delegate("li", "click", function(event){
+				$small.on("click", "li", function(event){
 					changeLi($(this).index());
 					autoPlay.restart();
 				});
@@ -141,6 +141,9 @@
 			}
 
 			function changeLi(index){
+				$etalage_magnifier_img.attr("src", $li.eq(index).find('.etalage_thumb_image').attr("src"));
+				$etalage_zoom_img.attr("src", $(this).find('.etalage_big_image').attr('src'));
+				
 				$ul.find('.etalage_thumb_active').removeClass('etalage_thumb_active').stop().animate({opacity: 0}, _option.speed, function() {
                     $(this).hide();
                 });
@@ -148,8 +151,6 @@
 
                 $li.eq(index).addClass('etalage_thumb_active').show().stop().css({opacity: 0}).animate({opacity: 1}, _option.speed);
                 $small.find('li:eq('+index+')').addClass('etalage_smallthumb_active').show().stop().css({opacity: _option.smallthumb_inactive_opacity}).animate({opacity: 1}, _option.speed);
-
-                $etalage_magnifier_img.attr("src", $li.eq(index).find('.etalage_thumb_image').attr("src"));
 			}
 
 			
@@ -189,7 +190,6 @@
 			}).mouseenter(function(event){
 				autoPlay.stop();
 
-				$etalage_zoom_img.attr("src", $(this).find('.etalage_big_image').attr('src'));
 				$etalage_zoom_area.css({"background-image":"none"}).stop().fadeIn(400);
 
 				$ul.find('.etalage_thumb_active').stop().animate({'opacity':0.5}, _option.speed*0.7);
