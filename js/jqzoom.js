@@ -131,6 +131,7 @@
 
 				$small = $('<li class="etalage_small_thumbs" style="top:'+top+'px; width:'+width+'px;"><ul class="clearfix" style="width: 485px;">'+html+'</ul></li>');
 				$ul.append($small);
+				$etalage_zoom_img.attr("src", $li.eq(0).find('.etalage_big_image').attr("src"));
 
 				$small.on("click", "li", function(event){
 					changeLi($(this).index());
@@ -141,15 +142,17 @@
 			}
 
 			function changeLi(index){
-				$etalage_magnifier_img.attr("src", $li.eq(index).find('.etalage_thumb_image').attr("src"));
-				$etalage_zoom_img.attr("src", $(this).find('.etalage_big_image').attr('src'));
+				var $cur_li = $li.eq(index);
+
+				$etalage_magnifier_img.attr("src", $cur_li.find('.etalage_thumb_image').attr("src"));
+				$etalage_zoom_img.attr("src", $cur_li.find('.etalage_big_image').attr("src"));
 				
 				$ul.find('.etalage_thumb_active').removeClass('etalage_thumb_active').stop().animate({opacity: 0}, _option.speed, function() {
                     $(this).hide();
                 });
                 $small.find('.etalage_smallthumb_active').removeClass('etalage_smallthumb_active').stop().animate({opacity: _option.smallthumb_inactive_opacity}, _option.speed);
 
-                $li.eq(index).addClass('etalage_thumb_active').show().stop().css({opacity: 0}).animate({opacity: 1}, _option.speed);
+                $cur_li.addClass('etalage_thumb_active').show().stop().css({opacity: 0}).animate({opacity: 1}, _option.speed);
                 $small.find('li:eq('+index+')').addClass('etalage_smallthumb_active').show().stop().css({opacity: _option.smallthumb_inactive_opacity}).animate({opacity: 1}, _option.speed);
 			}
 
